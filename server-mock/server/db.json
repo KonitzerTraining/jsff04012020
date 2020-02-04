@@ -1,0 +1,40 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Hans",
+      "address": {
+        "street": "Parkstrasse 76",
+        "zip": "39489",
+        "city": "München"
+      }
+    },
+    {
+      "id": 1,
+      "name": "Hans",
+      "address": {
+        "street": "Parkstrasse 76",
+        "zip": "39489",
+        "city": "München"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Peter",
+      "address": {
+        "street": "Im Zeil 32a",
+        "zip": "35989",
+        "city": "Passau"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ulf",
+      "address": {
+        "street": "Am Hang 3",
+        "zip": "74384",
+        "city": "Stuttgart"
+      }
+    }
+  ]
+}
