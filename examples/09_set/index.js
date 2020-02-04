@@ -1,5 +1,5 @@
 let items = [3,4,5,3,4,3,2,3];
-let list = new Set(items);
+let list = new Set(items); // ab ES6
 console.dir(Set);
 
 console.log(list);
