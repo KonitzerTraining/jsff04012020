@@ -1,3 +1,5 @@
+"use strict";
+
 // ES 3
 let o1 = new Object();
 
@@ -52,7 +54,7 @@ oES5 = Object.create({
         value: 'Hans',
         enumerable: true, // schleifenfähig
         writable: true, // änderbar
-        configurable: false // löschbar
+        configurable: false // löschbar/änderbar
     },
     city: {
         value: 'Berlin',
@@ -61,22 +63,70 @@ oES5 = Object.create({
 });
 console.log(oES5);
 
-for(let key in oES5) {
+for (let key in oES5) {
     console.log(key);
 }
 
-Object.keys(oES5).forEach( (key) => {
+Object.keys(oES5).forEach((key) => {
     console.log(key, oES5[key]);
 });
 
 //Object.seal(oES5);
 //Object.freeze(oES5);
 
-let z = {
-    title: 'aha'
+let product = {
+    title: 'Moped'
 };
 
-Object.defineProperty(z, 'id', {
-    value: '02938490', enumerable: true
+Object.defineProperty(product, 'price', {
+    value: 350, enumerable: true,
 });
-console.log(z);
+Object.defineProperties(product, {
+    __id__: {
+        value: '034940',
+        writable: true
+    },
+    id: {
+        get: function () {
+            return this.__id__;
+        },
+        set: function (id) {
+            this.__id__ = id;
+        }
+    }
+});
+product.id = '093480982';
+console.log(product.id);
+
+// ES 6
+let title = '*Überschrift';
+let prop1 = 'plz';
+let f = 'sayHello';
+let oES6 = {
+    title,
+    makeReservation () {
+        console.log('ok');
+    },
+    [prop1]: '09389',
+    [f] () {
+        console.log('hallo');
+    },
+    get id() {
+        return 'schon wieder?'
+    },
+    set id(n) {
+        console.log(n);
+    }
+};
+
+console.log(oES6.plz);
+console.log(oES6[prop1]);
+oES6[f]();
+console.log(oES6.id);
+oES6.id = '234';
+
+Reflect.defineProperty(oES6, 'street',{
+    value: 'soso', enumerable: true
+} );
+
+console.log(oES6);
