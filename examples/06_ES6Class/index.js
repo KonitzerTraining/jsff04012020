@@ -3,7 +3,6 @@ class Topic {
         this.date = Date.now();
 
     }
-
 }
 
 class Project extends Topic {
