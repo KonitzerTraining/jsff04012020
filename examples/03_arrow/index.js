@@ -37,9 +37,13 @@ contextB.sayColor.call(contextA, 'via ContextB');
 
 // ES3
 let _this = this;
-btn1.addEventListener('click', function (event) {
+btn1.addEventListener('click', function () {
     console.log(_this.color);
-    console.dir(event.target);
+
+    // this zum Zeipunkt der Ausführung,
+    // Funktion wird im Kontext ... (bestimmt durch addEventListener)
+    // ausgeführt (hier: der Button)
+    console.dir(this);
 });
 
 // ES5
@@ -50,10 +54,10 @@ btn2.addEventListener('click', function (event) {
 
 // ES 6
 btn3.addEventListener('click', (event) => {
+    // this zum Zeitpunkt der Erstellung der Funktion
     console.log(this.color);
     console.dir(event.target);
 });
-
 
 let fArrow = x => x * 2;
 
