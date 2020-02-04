@@ -102,6 +102,7 @@ console.log(product.id);
 let title = '*Überschrift';
 let prop1 = 'plz';
 let f = 'sayHello';
+let prop3 = 'id';
 let oES6 = {
     title,
     makeReservation () {
@@ -111,7 +112,7 @@ let oES6 = {
     [f] () {
         console.log('hallo');
     },
-    get id() {
+    get [prop3]() {
         return 'schon wieder?'
     },
     set id(n) {
