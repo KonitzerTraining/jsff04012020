@@ -37,5 +37,4 @@ fx('test');
 // IIFE Arrow
 (() => {
    console.log('läuft')
-
 })();
