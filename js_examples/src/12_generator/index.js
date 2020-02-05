@@ -24,6 +24,7 @@ console.log(gen.next());
 console.log(gen.next());
 console.log(gen.next());
 
+// Iterator selbst erstllen
 class Collection {
     * [Symbol.iterator] () {
         yield 1;
