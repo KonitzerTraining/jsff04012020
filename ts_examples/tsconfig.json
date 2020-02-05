@@ -5,7 +5,9 @@
     "sourceMap": true,
     "watch": true,
     "moduleResolution": "Node",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "exclude": [
     "node_modules"
