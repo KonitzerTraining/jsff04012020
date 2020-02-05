@@ -14,8 +14,8 @@ export class HTMLRenderer {
     renderMany(dataArr, template) {
 
         let html = '';
-        dataArr.forEach((item) => {
-            html += this.renderOne(item, template)
+        dataArr.forEach((dataObj) => {
+            html += this.renderOne(dataObj, template)
         });
         return html;
     }

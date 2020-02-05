@@ -4,7 +4,8 @@
     "target": "ES2015",
     "sourceMap": true,
     "watch": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "outDir": "./dist"
   },
   "exclude": [
     "node_modules"

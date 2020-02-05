@@ -1,4 +1,4 @@
-import {Http} from "../../lib/Http.js";
+import Http from "../../lib/Http.js";
 
 export class CustomerService {
     constructor() {
