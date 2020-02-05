@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ES2015",
+    "target": "ES2015",
+    "sourceMap": true,
+    "watch": true,
+    "moduleResolution": "Node"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "compileOnSave": true
+}
