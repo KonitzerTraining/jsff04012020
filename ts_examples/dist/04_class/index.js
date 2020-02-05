@@ -4,6 +4,7 @@ class Product {
         this.price = price;
     }
 }
+
 class Bekleidung extends Product {
     constructor(size, title, price) {
         super(title, price);
@@ -17,6 +18,7 @@ class Bekleidung extends Product {
         return Bekleidung.info;
     }
 }
+
 //private size: string;
 Bekleidung.info = '2.0';
 let b = new Bekleidung('L', 'Hemd', 43);

@@ -1,14 +1,11 @@
 class Product {
     constructor(public title: string, public price: number) {
-
-
     }
-
 }
 
 class Bekleidung extends Product {
     //private size: string;
-    public static info: string = '2.0';
+    public static info: string = '56';
 
     constructor(private size: string, title: string, price: number) {
         super(title, price);
