@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // ES 3
 let o1 = new Object();
@@ -7,7 +7,7 @@ let o1 = new Object();
 let o2 = {
     color: 'red',
     title: 'Text',
-    "meine persönliche Eigenschaft": 'test',
+    'meine persönliche Eigenschaft': 'test',
     3: 'auch'
 };
 o2.color = 'blue';
@@ -15,7 +15,7 @@ o2.amount = 4;
 
 console.log(o2.amount);
 console.log(o2['amount']);
-console.log(o2["meine persönliche Eigenschaft"]);
+console.log(o2['meine persönliche Eigenschaft']);
 console.log(o2[3]);
 
 // Anonymer Block
@@ -113,7 +113,7 @@ let oES6 = {
         console.log('hallo');
     },
     get [prop3]() {
-        return 'schon wieder?'
+        return 'schon wieder?';
     },
     set id(n) {
         console.log(n);

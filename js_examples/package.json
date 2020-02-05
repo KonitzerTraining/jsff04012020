@@ -1,0 +1,16 @@
+{
+  "name": "js_examples",
+  "version": "0.0.1",
+  "description": "JavaScript Examples",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src/**/*.js --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}

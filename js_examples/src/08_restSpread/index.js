@@ -3,7 +3,7 @@ function compute(x, y, ...z) {
     //let args = arguments;
     let args = Array.from(arguments);
     // Monkey-patching
-   // args.constructor.prototype.forEach = Array.prototype.forEach;
+    // args.constructor.prototype.forEach = Array.prototype.forEach;
     args.forEach((item) => {
         console.log(item);
     });
