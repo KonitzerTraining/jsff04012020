@@ -37,13 +37,16 @@ for (let key in o2) {
     console.log(key);
 }
 
+// Objekt mit eigener Konstruktor-Funktion erstellen
 function Person() {
     this.id = Math.random();
 }
 
+// Property für das Objekt erreichbar
 Person.prototype.city = 'Berlin';
 let p1 = new Person();
 
+// alte Variante, eher nicht verwenden -> Object.keys();
 for (let key in p1) {
 
     // Eigenschaften im Prototyp ausschließen
@@ -53,11 +56,16 @@ for (let key in p1) {
 }
 
 // ES5
+// Object ohne Prototyp, Konstruktor und Eigenschaften.
+// Erster Parameter is Prototyp
 let oES5 = Object.create(null, {});
 console.log(oES5);
 
 oES5 = Object.create({
+    // Eigenschaft ist enumerable
     constructor: Person
+    // Prototypische Eigenschaften aus Person werden nicht
+    // automatisch übernommen.
 }, {
     name: { // property descriptor map
         value: 'Hans',
@@ -72,6 +80,7 @@ oES5 = Object.create({
 });
 console.log(oES5);
 
+// liefert auch die Eigenschaften aus dem Prototyp
 for (let key in oES5) {
     console.log(key);
 }
@@ -92,6 +101,7 @@ let product = {
     title: 'Moped'
 };
 
+// Granulare Rechte für neue Eigenschaften
 Object.defineProperty(product, 'price', {
     value: 350, enumerable: true,
 });
@@ -100,6 +110,9 @@ Object.defineProperties(product, {
         value: '034940',
         writable: true
     },
+
+    // Get und set für id
+    // Funktioniert hier anders als in Java
     id: {
         get: function () {
             return this.__id__;
@@ -109,7 +122,11 @@ Object.defineProperties(product, {
         }
     }
 });
+
+// Schreibzugriff löst set-Funktion aus
 product.id = '093480982';
+
+// Lesezugriff löst get-Funktion aus
 console.log(product.id);
 
 // ES 6
@@ -118,14 +135,19 @@ let prop1 = 'plz';
 let f = 'sayHello';
 let prop3 = 'id';
 let oES6 = {
+    // Kurzschreibweisen
     title, // title: title
     makeReservation() { // makeReservation: function () {
         console.log('ok');
     },
+
+    // Dynamische Eigenschaften
     [prop1]: '09389', // plz: '09389'
     [f]() {
         console.log('hallo');
     },
+
+    // Get und set auch dynmaisch möglich
     get [prop3]() {
         return 'schon wieder?';
     },
@@ -140,9 +162,11 @@ oES6[f]();
 console.log(oES6.id);
 oES6.id = '234';
 
+// Re-Implementierung von Object.defineProperty() aus ES5
 Reflect.defineProperty(oES6, 'street', {
     value: 'soso', enumerable: true
 });
 
 console.log(oES6);
-oES6.street = 2234;
+// Fehlermeldung: street ist readonly
+// oES6.street = 2234;
