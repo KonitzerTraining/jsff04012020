@@ -1,10 +1,10 @@
 // Object literal notation
-let list = [
+const record = [
     3, 'Überschrift', 'jemand'
-];
+]; // Beispiel für einen Datensatz
 
 // ES6 array deconstructor
-let [id, title, author, isbn = null] = list;
+const [id, title, author, isbn = null] = record;
 console.log(id, title, author, isbn);
 
 let address = {
@@ -17,9 +17,12 @@ let address = {
 };
 
 // ES6 object deconstructor
-let {street, plz: zip, city, note = 'x' } = address;
+// zip ist die neue Variable, eine Alias für plz.
+// note bekommt einen default-Wert 'x'
+let {street, plz: zip, city, note = 'x'} = address;
 console.log(street, zip, city, note);
 
+// Herauszhiehen einer einzelnen Eigenschaft aus dem übergebenen Objekt
 function checkZip({plz: zip = null}){
     console.log(zip);
 }
