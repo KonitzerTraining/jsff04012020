@@ -2,6 +2,8 @@
 // symbol
 
 let s1 = Symbol(); // Eindeutiger Wert
+let s2 = Symbol();
+console.log(s1 === s2);
 console.log(s1, typeof s1);
 
 const ox = {
@@ -23,6 +25,7 @@ const oy = {
 
 oy[add]();
 
-//Symbol.replace
+// Well-known Symbols
+// Symbol.replace
 
 console.log('abcb'.replace('b', 'x'));

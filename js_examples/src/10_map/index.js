@@ -15,7 +15,6 @@ for (let [key, value] of map.entries()) {
     console.log(key, value);
 }
 
-
 for (let key of map.keys()) {
     console.log(key);
 }
