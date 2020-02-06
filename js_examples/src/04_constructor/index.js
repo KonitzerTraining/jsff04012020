@@ -1,13 +1,27 @@
 // ES3
+// alle Properties und Methods sind immer public
 let Person = (function () {
 
     function Person(name) {
+        // Properties
         this.name = name;
+
+        // True Private
+        var id = Math.floor(Math.random() * 1e8);
+        this.getid = function () {
+            return id;
+        };
     }
 
+    // Methods
     Person.prototype.anrufen = function () {
         console.log(this.name + ' am Aparat');
     };
+
+    // Static Method
+    Person.isPerson = function () {
+    }
+
     return Person;
 
 }());

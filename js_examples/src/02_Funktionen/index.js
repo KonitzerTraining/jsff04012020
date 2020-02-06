@@ -41,7 +41,7 @@ let fx = (p) => {
 
 fx('test');
 
-// IIFE Arrow
+// IIFE mit Arrow Function
 (() => {
     console.log('läuft');
 })(); // Order-Operator-Klammer liegt innen.

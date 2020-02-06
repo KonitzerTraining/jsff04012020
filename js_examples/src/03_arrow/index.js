@@ -1,6 +1,6 @@
 // Context
-
 console.log(this); // leer wenn via node
+
 // nur unter node:
 //console.log(global);
 console.log(window === this);
@@ -13,10 +13,11 @@ function sayColor(p) {
     console.log(p, this.color);
 }
 
+sayColor('via global');
+
+// bind fixiert den Ausführungskontext
 let bindToSayColor = sayColor.bind({color: 'red'});
 bindToSayColor('bind');
-
-sayColor('via global');
 
 let contextA = {
     color: 'yellow',
@@ -27,16 +28,17 @@ contextA.sayColor('via ContextA');
 
 let contextB = {
     sayColor: function (p) {
-
         // this ist abhängig vom Aufrufkontext
         console.log(p, this.color);
     }
 };
-
+contextB.sayColor('direkt');
 contextB.sayColor.call(contextA, 'via ContextB');
 
 // ES3
+// kopieren den Original-Kontexts
 let _this = this;
+const btn1 = document.querySelector('#btn1');
 btn1.addEventListener('click', function () {
     console.log(_this.color);
 
@@ -47,23 +49,35 @@ btn1.addEventListener('click', function () {
 });
 
 // ES5
+// Binden des Original-Kontexts
+const btn2 = document.querySelector('#btn2');
 btn2.addEventListener('click', function (event) {
     console.log(this.color);
     console.dir(event.target);
 }.bind(this));
 
+
 // ES 6
+// Arrow Function
+const btn3 = document.querySelector('#btn3');
 btn3.addEventListener('click', (event) => {
     // this zum Zeitpunkt der Erstellung der Funktion
     console.log(this.color);
     console.dir(event.target);
 });
 
-let fArrow = x => x * 2;
+const fArrwoFull =  (x) => {
+    return x *2;
+};
+fArrwoFull();
 
-let erg = fArrow(5);
+// 1 Parameter: Klammern weg
+// 1 Anweisung: Return und Klammern raus
+const fArrow = x => x * 2;
+
+const erg = fArrow(5);
 console.log(erg);
 
-let list = [3, 6, 5, 2];
-let tranformiert = list.map(item => item * 2);
+const list = [3, 6, 5, 2];
+const tranformiert = list.map(item => item * 2);
 console.log(tranformiert);
