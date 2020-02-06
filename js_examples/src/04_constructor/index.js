@@ -7,9 +7,9 @@ let Person = (function () {
         this.name = name;
 
         // True Private
-        var id = Math.floor(Math.random() * 1e8);
+        let id = Math.floor(Math.random() * 1e8);
         this.getid = function () {
-            return id;
+            return id; // id landet in Closure Person
         };
     }
 
@@ -20,7 +20,7 @@ let Person = (function () {
 
     // Static Method
     Person.isPerson = function () {
-    }
+    };
 
     return Person;
 

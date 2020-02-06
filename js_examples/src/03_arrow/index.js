@@ -1,14 +1,11 @@
 // Context
 console.log(this); // leer wenn via node
-
-// nur unter node:
-//console.log(global);
+// nur unter node: console.log(global);
 console.log(window === this);
 
 var color = 'green';
 
 function sayColor(p) {
-
     // this ist abhängig vom Aufrufkontext
     console.log(p, this.color);
 }
@@ -38,7 +35,7 @@ contextB.sayColor.call(contextA, 'via ContextB');
 // ES3
 // kopieren den Original-Kontexts
 let _this = this;
-const btn1 = document.querySelector('#btn1');
+const btn1 = document.querySelector('#btn1'); // HTML5 Query Selector API
 btn1.addEventListener('click', function () {
     console.log(_this.color);
 
@@ -56,6 +53,7 @@ btn2.addEventListener('click', function (event) {
     console.dir(event.target);
 }.bind(this));
 
+// var color = 'green' => window.color => this.color
 
 // ES 6
 // Arrow Function
@@ -66,10 +64,10 @@ btn3.addEventListener('click', (event) => {
     console.dir(event.target);
 });
 
-const fArrwoFull =  (x) => {
+const fArrowFull =  (x) => {
     return x *2;
 };
-fArrwoFull();
+fArrowFull();
 
 // 1 Parameter: Klammern weg
 // 1 Anweisung: Return und Klammern raus
