@@ -1,11 +1,15 @@
-let a = 234;
+// Implizte Typzuweisung
+let a = 234; // a soll nun number sein
 a = '234';
 
+// Explizite Typzuweisung mit :
 let b1: number;
-b1 = 34;
 b1 = null;
 b1 = undefined;
+b1 = 34;
 let b2: any = 'egal';
+
+let b3: null;
 
 // Oder
 let path: string | string[] = 'asdf';
@@ -26,11 +30,17 @@ enum Sendung {
     Geliefert
 }
 
+
 let myPost: Sendung = Sendung.Verschollen;
 
 if (myPost === Sendung.Verschollen) {
     console.log('weg');
 }
+
+
+// Datenmodellierung via Interface
+// Interaces werden nicht in JavaScript umgewandelt
+// Können als Model während der Konzeptionsphase hinterlegt werden.
 
 interface IContact {
     phone?: string;
@@ -49,15 +59,15 @@ interface ICustomer extends IContact{
 }
 
 let c1: ICustomer = {
-    id: 3,
-    name: 'Hans',
-    address: {
-        street: '234'
-    },
-    phone: '0983948029384'
+    id: 5,
+    name: 'hans',
+    phone: '02934890'
 };
 
+// Typ-Casting (Typescript)
+// Hat keinen Einfluß auf JavaScript
 let data: any = {id: 5, name: 'Peter'};
+// (data as Date).toLocaleString()
 
 console.log((data as ICustomer).name);
 

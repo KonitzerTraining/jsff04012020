@@ -4,12 +4,13 @@ class Product {
         this.price = price;
     }
 }
-
 class Bekleidung extends Product {
     constructor(size, title, price) {
         super(title, price);
         this.size = size;
         //this.size = size;
+        console.log(size);
+        console.log(this.size);
     }
     passtDas(s) {
         return s === this.size;
@@ -18,10 +19,11 @@ class Bekleidung extends Product {
         return Bekleidung.info;
     }
 }
-
 //private size: string;
-Bekleidung.info = '2.0';
+// private public
+Bekleidung.info = 'Only for testing';
 let b = new Bekleidung('L', 'Hemd', 43);
+console.log(Bekleidung.info);
 console.log(b.size);
 console.log(b.passtDas('M'));
 //# sourceMappingURL=index.js.map

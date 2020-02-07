@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// Decorator (eine Funktion)
 let CustomerComponent = class CustomerComponent {
     constructor() {
         this.title = 'Überschrift';
@@ -36,7 +37,7 @@ console.log((new CustomerComponent()).render());
 function Component(config) {
     return function (classRef) {
         classRef.prototype.render = function () {
-            return config.template.repeat('{{title}}', this.title);
+            return config.template.replace('{{title}}', this.title);
         };
     };
 }

@@ -6,10 +6,13 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 
 
 @NgModule({
-  declarations: [CustomerListComponent],
-  imports: [
-    CommonModule,
-    CustomerManagementRoutingModule
-  ]
+    declarations: [CustomerListComponent],
+    exports: [
+        CustomerListComponent
+    ],
+    imports: [
+        CommonModule,
+        CustomerManagementRoutingModule
+    ]
 })
 export class CustomerManagementModule { }
